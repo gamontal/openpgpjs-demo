@@ -6,6 +6,10 @@ function enabBtn(EncBtn) {
     EncBtn.disabled = false;
 }
 
+function cut(str, cutStart, cutEnd){
+  return str.substr(0,cutStart) + str.substr(cutEnd+1);
+}
+
 function clearMsg() {
     document.getElementById("usrInput").value = "";
 }
@@ -43,8 +47,10 @@ function encryptMsg() {
     window.openpgp.encryptMessage(publicKey.keys, raw_message).then(function(pgpMessage) {
         
         sessionStorage.setItem("message", pgpMessage);
-        alert(pgpMessage);
         
+        pgpMessage = pgpMessage.replace("-----END PGP MESSAGE-----", " ");
+        
+        document.getElementById("usrInput").value = cut(pgpMessage, 0, 88);
     });
 }   
 
@@ -59,6 +65,6 @@ function decryptMsg() {
     pgpMessage = window.openpgp.message.readArmored(pgpMessage);
     
     window.openpgp.decryptMessage(privateKey, pgpMessage).then(function(plaintext) {
-    alert(plaintext);
+    document.getElementById("usrInput").value = plaintext;
     });
 }

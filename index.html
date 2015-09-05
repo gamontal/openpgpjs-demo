@@ -57,7 +57,7 @@
 			<span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Encrypt message
 		</button>
 		
-		<button disabled id = "decryptBtn" type="button" class="btn btn-default btn-lg" onclick="decryptMsg()">
+		<button disabled id = "decryptBtn" type="button" class="btn btn-default btn-lg" onclick="clearMsg(); decryptMsg(); disBtn(this); enabBtn(encryptBtn)">
 			<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Decrypt message
 		</button>
 		
