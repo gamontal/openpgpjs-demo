@@ -6,6 +6,9 @@ function enabBtn(EncBtn) {
     EncBtn.disabled = false;
 }
 
+function clearMsg() {
+    document.getElementById("usrInput").value = "";
+}
 
 function generate_key() {
 
@@ -15,19 +18,15 @@ var options = {
     passphrase: '123qweasdhgv34ghv'
 };
 
-var privkey;
-var pubkey;
+     sessionStorage.setItem("passphrase", options.passphrase);
 
      window.openpgp.generateKeyPair(options).then(function(keyPair) {
+         
+      // window.prompt("Your public key:", keyPair.publicKeyArmored);
+      console.log(keyPair.publicKeyArmored);
       
-      console.log(keyPair.privateKeyArmored);
-      privkey = keyPair.privateKeyArmored;
-      pubkey = keyPair.publicKeyArmored;
-      
-      var pubKeyString = JSON.stringify(pubkey);  
-      
-      sessionStorage.setItem("pubKeyString", pubKeyString);
-
+      sessionStorage.setItem("pubKeyString", keyPair.publicKeyArmored);
+      sessionStorage.setItem("privKeyString", keyPair.privateKeyArmored);
      });
 				
 document.getElementById("keyStat").className = "label label-primary";
@@ -37,14 +36,29 @@ document.getElementById("keyStat").innerHTML = "A key has been generated for you
 
 function encryptMsg() {
 
-    var key = sessionStorage.getItem("pubKeyString");
-    var publicKey = window.openpgp.key.readArmored(key);
+    var publicKey = window.openpgp.key.readArmored(sessionStorage.getItem("pubKeyString"));
     
-    var raw_message = "This is a test. this is a normal sentence";
+    var raw_message = document.getElementById("usrInput").value;
     
     window.openpgp.encryptMessage(publicKey.keys, raw_message).then(function(pgpMessage) {
-        console.log(pgpMessage);
+        
+        sessionStorage.setItem("message", pgpMessage);
+        alert(pgpMessage);
+        
     });
-   
 }   
 
+function decryptMsg() {
+    
+    var privateKey = window.openpgp.key.readArmored(sessionStorage.getItem("privKeyString")).keys[0];
+    var passphrase = sessionStorage.getItem("passphrase");
+    
+    privateKey.decrypt(passphrase);
+    
+    var pgpMessage = sessionStorage.getItem("message");
+    pgpMessage = window.openpgp.message.readArmored(pgpMessage);
+    
+    window.openpgp.decryptMessage(privateKey, pgpMessage).then(function(plaintext) {
+    alert(plaintext);
+    });
+}
