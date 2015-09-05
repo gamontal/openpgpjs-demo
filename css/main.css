@@ -1,0 +1,62 @@
+div.container {
+    background-color:black;
+    color:white;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 11px 11px 6px #888888;
+    margin: auto;
+} 
+
+body {
+    /* background-image: url("background-image.jpg") */
+    
+}
+
+
+h5 {
+    text-align: left;
+}
+
+textarea {
+    color: white;
+    background-color:black;
+    font-size: 20px;
+    resize: none;
+    width: 100%;
+    height: 250px;
+    border-radius: 2px;
+}
+
+#genKey-btn {
+     float: left;
+     margin: 4px;
+}
+
+#encryptBtn {
+     float: left;
+     margin: 4px;
+}
+
+#decryptBtn {
+     float: left;
+     margin: 4px;
+}
+
+#ver-pos {
+     padding-top: 50px;
+}
+
+#project-link {
+   float: right;
+   font-size: 18px;
+   color: rebeccapurple;
+   margin: 15px;  
+}
+
+#status {
+    float: right;
+}
+
+#msgAlgn {
+    float:left;
+}
