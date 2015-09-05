@@ -1,1 +1,1 @@
-# openpgpjs-web-demo
+# OpenPGP.js Browser Demo
