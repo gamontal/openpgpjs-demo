@@ -3,13 +3,13 @@ div.container {
     color:white;
     padding:20px;
     border-radius: 5px;
-    box-shadow: 11px 11px 6px #888888;
+    box-shadow: 11px 11px 6px #707070;
     margin: auto;
 } 
 
 body {
     /* background-image: url("background-image.jpg") */
-    
+    background-color: lightgrey;
 }
 
 
@@ -49,7 +49,7 @@ textarea {
 #project-link {
    float: right;
    font-size: 18px;
-   color: rebeccapurple;
+   color: mediumpurple;
    margin: 15px;  
 }
 
