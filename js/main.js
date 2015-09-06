@@ -14,6 +14,15 @@ function clearMsg() { // clears textarea value
     document.getElementById("txtbox").value = "";
 }
 
+function disBox() {
+    document.getElementById("txtbox").disabled = true; 
+}
+
+function enbBox() {
+    document.getElementById("txtbox").disabled = false; 
+}
+
+
 // GENERATE NEW KEY PAIR //
 function generate_key() {
 

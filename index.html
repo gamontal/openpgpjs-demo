@@ -53,11 +53,11 @@
 			<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Generate Key
 		</button>
 		
-		<button disabled id = "encryptBtn" type="button" class="btn btn-default btn-lg" onclick="encryptMsg(); disBtn(this); enabBtn(decryptBtn); clearMsg()">
+		<button disabled id = "encryptBtn" type="button" class="btn btn-default btn-lg" onclick="encryptMsg(); disBtn(this); enabBtn(decryptBtn); clearMsg(); disBox()">
 			<span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Encrypt message
 		</button>
 		
-		<button disabled id = "decryptBtn" type="button" class="btn btn-default btn-lg" onclick="clearMsg(); decryptMsg(); disBtn(this); enabBtn(encryptBtn)">
+		<button disabled id = "decryptBtn" type="button" class="btn btn-default btn-lg" onclick="clearMsg(); decryptMsg(); disBtn(this); enabBtn(encryptBtn); enbBox()">
 			<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Decrypt message
 		</button>
 		
