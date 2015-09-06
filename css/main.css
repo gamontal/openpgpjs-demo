@@ -25,6 +25,7 @@ textarea {
     width: 100%;
     height: 250px;
     border-radius: 2px;
+    border: 2px solid white;
 }
 
 #genKey-btn {
