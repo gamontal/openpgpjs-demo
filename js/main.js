@@ -41,6 +41,11 @@ function encryptMsg() {
         pgpMessage = pgpMessage.replace("-----END PGP MESSAGE-----", " ");
         
         document.getElementById("txtbox").value = cut(pgpMessage, 0, 88); // display encrypted message
+        
+        // status change			
+        document.getElementById("keyStat").className = "label label-default";
+        document.getElementById("keyStat").innerHTML = "Encrypted";
+        
     });
 }   
 
@@ -58,6 +63,11 @@ function decryptMsg() {
     window.openpgp.decryptMessage(privateKey, pgpMessage).then(function(plaintext) {
     document.getElementById("txtbox").value = plaintext; // display plain text data
     });
+    
+    // status change			
+    document.getElementById("keyStat").className = "label label-default";
+    document.getElementById("keyStat").innerHTML = "Decrypted";
+    
 }
 
 function disBtn(btn) {
