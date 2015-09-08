@@ -1,27 +1,3 @@
-function disBtn(btn) {
-    btn.disabled = true; // disable button method
-}
-
-function enabBtn(EncBtn) {
-    EncBtn.disabled = false; // enable button method
-}
-
-function cut(str, cutStart, cutEnd){ // custom function to cut strings
-  return str.substr(0,cutStart) + str.substr(cutEnd+1);
-}
-
-function clearMsg() { // clears textarea value
-    document.getElementById("txtbox").value = "";
-}
-
-function disBox() {
-    document.getElementById("txtbox").disabled = true; 
-}
-
-function enbBox() {
-    document.getElementById("txtbox").disabled = false; 
-}
-
 
 // GENERATE NEW KEY PAIR //
 function generate_key() {
@@ -82,4 +58,28 @@ function decryptMsg() {
     window.openpgp.decryptMessage(privateKey, pgpMessage).then(function(plaintext) {
     document.getElementById("txtbox").value = plaintext; // display plain text data
     });
+}
+
+function disBtn(btn) {
+    btn.disabled = true; // disable button method
+}
+
+function enabBtn(EncBtn) {
+    EncBtn.disabled = false; // enable button method
+}
+
+function cut(str, cutStart, cutEnd){ // custom function to cut strings
+  return str.substr(0,cutStart) + str.substr(cutEnd+1);
+}
+
+function clearMsg() { // clears textarea value
+    document.getElementById("txtbox").value = "";
+}
+
+function disBox() {
+    document.getElementById("txtbox").disabled = true; 
+}
+
+function enbBox() {
+    document.getElementById("txtbox").disabled = false; 
 }
