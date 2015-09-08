@@ -2,7 +2,7 @@
 // GENERATE NEW KEY PAIR //
 function generate_key() {
 
-var options = {     // generic data for demo purposes
+var options = {     // used random data for demo purposes
     numBits: 2048, 
     userId: 'User Name <usr@someserver.com>', 
     passphrase: '123qweasdhgv34ghv'
