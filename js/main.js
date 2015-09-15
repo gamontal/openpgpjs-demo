@@ -20,9 +20,9 @@ var options = {     // used random data for demo purposes
       sessionStorage.setItem("privKeyString", keyPair.privateKeyArmored);
      });
      
-// status change			
-document.getElementById("keyStat").className = "label label-primary";
-document.getElementById("keyStat").innerHTML = "A key has been generated for you";
+    // status change			
+    document.getElementById("keyStat").className = "label label-primary";
+    document.getElementById("keyStat").innerHTML = "A key has been generated for you";
 
 }
 
